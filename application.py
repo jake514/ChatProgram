@@ -16,10 +16,8 @@ app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")
 # socketio = SocketIO(app)
 
 #------------------------------------------------------------app.routes
-@app.route("/")
+@app.route("/", methods=["POST", "GET"])
 def index():
-    session["username"] = request.form.get("username")
-    if session["username"] is None:
-        return render_template('index.html')
-    else:
-        return render_template('chat.html')
+    return render_template('index.html')
+
+    #MDN local storage
