@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
 
     <title>Chat</title>
 </head>
@@ -12,6 +13,16 @@
 <body>
     <p id="welcome"></p>
     <script src="/static/js/app.js"></script>
+    <h3>List of channels</h3>
+    {% for names in channels %}
+        <ul>{{ names.name }}</ul>
+    {% endfor %}
+        <ul id="channelNames"></ul>
+
+    <form class="newChannelForm">Create a new channel!
+        <input id="newChannel" type="text">
+        <button value="Create Channel">Press me</button>
+    </form>
 </body>
 
 </html>

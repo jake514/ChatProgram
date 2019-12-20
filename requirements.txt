@@ -1,2 +1,6 @@
 Flask
 Flask-SocketIO
+Flask
+Flask-Session
+psycopg2-binary
+SQLAlchemy
